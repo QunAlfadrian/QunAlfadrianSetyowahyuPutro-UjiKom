@@ -2600,7 +2600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 1287937140}
-  _tmp_score: {fileID: 1089585107}
+  _tmp_score: {fileID: 1095366672}
 --- !u!1001 &1332519511
 PrefabInstance:
   m_ObjectHideFlags: 0
