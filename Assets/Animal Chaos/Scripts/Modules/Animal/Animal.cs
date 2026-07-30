@@ -1,10 +1,11 @@
 using GDPP2.UjiKom.Scoring;
+using System;
 using UnityEngine;
 
 namespace GDPP2.UjiKom.AnimalSystem {
     [SelectionBase]
     [RequireComponent(typeof(Rigidbody))]
-    public class Animal : MonoBehaviour, IMovable, ISpawnable {
+    public class Animal : MonoBehaviour, IInitializable, IDisposable, IMovable, ISpawnable {
         [SerializeField] private AnimalData _data;
         private Rigidbody _rigidbody;
 
@@ -18,6 +19,18 @@ namespace GDPP2.UjiKom.AnimalSystem {
 
         public void Spawn() {
             Move();
+        }
+
+        public void Initialize() {
+            GameContext.SceneEvents.Subscribe<GameOverEvent>(OnGameOver);
+        }
+
+        public void Dispose() {
+            GameContext.SceneEvents.Unsubscribe<GameOverEvent>(OnGameOver);
+        }
+
+        private void OnGameOver(GameOverEvent evt) {
+            Destroy(gameObject);
         }
 
         private void OnTriggerEnter(Collider other) {
@@ -36,6 +49,10 @@ namespace GDPP2.UjiKom.AnimalSystem {
         #region Unity Lifecycle
         private void Awake() {
             _rigidbody = GetComponent<Rigidbody>();
+        }
+
+        private void Start() {
+            GameContext.SceneServices.Register(this);
         }
         #endregion
     }

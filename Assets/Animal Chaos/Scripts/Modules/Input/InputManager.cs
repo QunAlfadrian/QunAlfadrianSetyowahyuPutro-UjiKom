@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace GDPP2.UjiKom.Input {
-    public class InputManager : MonoBehaviour {
+    public class InputManager : MonoBehaviour, IInitializable, IDisposable {
         private InputSystem_Actions _inputActions;
 
         private void ReadMoveInput() {
@@ -11,8 +12,20 @@ namespace GDPP2.UjiKom.Input {
             GameContext.SceneEvents.Publish(new PlayerMoveInputEvent(moveInput));
         }
 
-        private void OnPlayerAttack(InputAction.CallbackContext evt) {
+        private void OnPlayerAttack(InputAction.CallbackContext ctx) {
             GameContext.SceneEvents.Publish(new AttackInputEvent());
+        }
+
+        public void Initialize() {
+            GameContext.SceneEvents.Subscribe<GameOverEvent>(OnGameOver);
+        }
+
+        public void Dispose() {
+            GameContext.SceneEvents.Unsubscribe<GameOverEvent>(OnGameOver);
+        }
+
+        private void OnGameOver(GameOverEvent evt) {
+            _inputActions.Player.Disable();
         }
 
         private void Awake() {
@@ -22,6 +35,8 @@ namespace GDPP2.UjiKom.Input {
         }
 
         private void Start() {
+            GameContext.SceneServices.Register(this);
+
             _inputActions.Player.Enable();
         }
 

@@ -28,7 +28,8 @@ public class GameplayTimer : MonoBehaviour {
 
         if (_timeRemaining <= 0) {
             _paused = true;
-            // publish gameover event
+
+            GameContext.SceneEvents.Publish(new GameOverEvent());
         }
     }
 }
