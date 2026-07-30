@@ -13,8 +13,9 @@ namespace GDPP2.UjiKom.AnimalSystem {
         public int ScorePenalty => _scorePenalty;
         public GameObject Prefab => _prefab;
 
-        public GameObject GetInstance(Transform parent) {
-            return Instantiate(_prefab, parent);
+        public Animal GetAnimalInstance(Transform parent) {
+            GameObject animalObject = Instantiate(_prefab, parent);
+            return animalObject.GetComponent<Animal>();
         }
     }
 }

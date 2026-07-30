@@ -10,7 +10,7 @@ namespace GDPP2.UjiKom.AnimalSystem {
         public int MoveSpeed => _data.MoveSpeed;
 
         public void Move() {
-            Vector3 movementVector = Vector3.forward * MoveSpeed * Time.fixedDeltaTime;
+            Vector3 movementVector = transform.forward * MoveSpeed * Time.fixedDeltaTime;
 
             _rigidbody.linearVelocity = movementVector;
         }
@@ -18,10 +18,6 @@ namespace GDPP2.UjiKom.AnimalSystem {
         #region Unity Lifecycle
         private void Awake() {
             _rigidbody = GetComponent<Rigidbody>();
-        }
-
-        private void Start() {
-            Move();
         }
         #endregion
     }
