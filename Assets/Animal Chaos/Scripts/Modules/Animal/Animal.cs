@@ -54,6 +54,10 @@ namespace GDPP2.UjiKom.AnimalSystem {
         private void Start() {
             GameContext.SceneServices.Register(this);
         }
+
+        private void OnDestroy() {
+            Dispose();
+        }
         #endregion
     }
 }

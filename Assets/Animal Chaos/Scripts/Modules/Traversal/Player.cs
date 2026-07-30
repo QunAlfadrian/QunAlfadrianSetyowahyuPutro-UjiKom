@@ -10,6 +10,8 @@ namespace GDPP2.UjiKom.Traversal {
         private Vector2 _inputVector;
 
         public int MoveSpeed => _moveSpeed;
+        public bool IsWalking { get; private set; }
+        public Vector2 InputVector => _inputVector;
 
         public void Initialize() {
             GameContext.SceneEvents.Subscribe<PlayerMoveInputEvent>(OnPlayerMove);
@@ -28,6 +30,12 @@ namespace GDPP2.UjiKom.Traversal {
         }
 
         private void OnPlayerMove(PlayerMoveInputEvent evt) {
+            if (_inputVector.sqrMagnitude > 0) {
+                IsWalking = true;
+            } else {
+                IsWalking = false;
+            }
+
             _inputVector = evt.InputVector;
             Move();
         }
