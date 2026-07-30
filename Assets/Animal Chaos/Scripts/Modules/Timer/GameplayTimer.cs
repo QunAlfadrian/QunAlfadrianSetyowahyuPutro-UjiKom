@@ -6,6 +6,9 @@ public class GameplayTimer : MonoBehaviour {
     [SerializeField] private float _timeElapsed;
     private bool _paused;
 
+    public float TimeElapsed => _timeElapsed;
+    public float TimeRemaining => _timeRemaining;
+
     private void Start() {
         _timeElapsed = 0f;
         _timeRemaining = _timeLimit;

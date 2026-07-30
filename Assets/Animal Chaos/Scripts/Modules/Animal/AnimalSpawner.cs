@@ -25,13 +25,13 @@ namespace GDPP2.UjiKom.AnimalSystem {
 
         private void OnGameTimerChanged(GameplayTimerEvent evt) {
             if (evt.TimeElapsed - _timeSinceLastInterval >= _spawnInterval) {
-                Spawn();
+                SpawnAnimals();
 
                 _timeSinceLastInterval = evt.TimeElapsed;
             }
         }
 
-        private void Spawn() {
+        private void SpawnAnimals() {
 
             for (int i = 0; i < _spawnPerInterval; i++) {
                 Vector3 spawnPos = GetSpawnPoint();
@@ -41,7 +41,7 @@ namespace GDPP2.UjiKom.AnimalSystem {
                 Animal animal = animalToSpawn.GetAnimalInstance(transform);
                 animal.transform.position = spawnPos;
                 animal.transform.rotation = transform.rotation;
-                animal.Move();
+                animal.Spawn();
 
                 Debug.Log($"Spawned <color=orange>{animalToSpawn.name}</color>");
             }
@@ -58,7 +58,7 @@ namespace GDPP2.UjiKom.AnimalSystem {
             GameContext.SceneServices.Register(this);
             _timeSinceLastInterval = 0;
 
-            Spawn();
+            SpawnAnimals();
         }
     }
 }

@@ -11,8 +11,14 @@ namespace GDPP2.UjiKom.Input {
             GameContext.SceneEvents.Publish(new PlayerMoveInputEvent(moveInput));
         }
 
+        private void OnPlayerAttack(InputAction.CallbackContext evt) {
+            GameContext.SceneEvents.Publish(new AttackInputEvent());
+        }
+
         private void Awake() {
             _inputActions = new InputSystem_Actions();
+
+            _inputActions.Player.Attack.performed += OnPlayerAttack;
         }
 
         private void Start() {
