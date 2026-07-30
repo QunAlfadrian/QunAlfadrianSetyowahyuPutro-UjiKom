@@ -1,3 +1,4 @@
+using GDPP2.UjiKom.Scoring;
 using UnityEngine;
 
 namespace GDPP2.UjiKom.AnimalSystem {
@@ -17,6 +18,19 @@ namespace GDPP2.UjiKom.AnimalSystem {
 
         public void Spawn() {
             Move();
+        }
+
+        private void OnTriggerEnter(Collider other) {
+            bool isProjectile = other.CompareTag("Projectile");
+            bool isAnimalBorder = other.CompareTag("AnimalBorder");
+
+            if (isProjectile) {
+                GameContext.SceneEvents.Publish(new ScoreEvent(_data.Score));
+                Destroy(gameObject);
+            } else if (isAnimalBorder) {
+                GameContext.SceneEvents.Publish(new ScoreEvent(_data.ScorePenalty));
+                Destroy(gameObject);
+            }
         }
 
         #region Unity Lifecycle

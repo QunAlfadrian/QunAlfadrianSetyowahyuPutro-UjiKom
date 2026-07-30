@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8695314210538761333}
   m_Layer: 0
   m_Name: Pizza
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 2.26}
+  m_Size: {x: 2.31, y: 1, z: 2.26}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8695314210538761333
 MonoBehaviour:

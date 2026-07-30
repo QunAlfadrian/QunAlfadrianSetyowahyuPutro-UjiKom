@@ -56,19 +56,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cow Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8231511137463851548, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4328645776649203090, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4625141935345972613}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8231511137463851548, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6897831278182282275}
   m_SourcePrefab: {fileID: 100100000, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
 --- !u!4 &2042694693026002495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4328645776649203090, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
   m_PrefabInstance: {fileID: 2327072819852630957}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5942323383147168177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8231511137463851548, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
+  m_PrefabInstance: {fileID: 2327072819852630957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &-6897831278182282275
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942323383147168177}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.44, y: 5.76, z: 8.35}
+  m_Center: {x: 0, y: 3.43, z: -0.56}
 --- !u!1001 &5162663839408476782
 PrefabInstance:
   m_ObjectHideFlags: 0

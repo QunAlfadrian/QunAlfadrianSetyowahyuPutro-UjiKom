@@ -56,19 +56,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horse Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8231511137463851548, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4328645776649203090, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 796429818042619857}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8231511137463851548, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6651770265324096390}
   m_SourcePrefab: {fileID: 100100000, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
 --- !u!4 &4178633392351409053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4328645776649203090, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
   m_PrefabInstance: {fileID: 427574267981028879}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8634314507980571667 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8231511137463851548, guid: 7eec537bf56b4814ebdfa6968a400e2d, type: 3}
+  m_PrefabInstance: {fileID: 427574267981028879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6651770265324096390
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634314507980571667}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.27, y: 5.44, z: 5.87}
+  m_Center: {x: 0, y: 3.39, z: 0}
 --- !u!1001 &902907740312629306
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 300
   _score: 1
-  _scorePenalty: 3
+  _scorePenalty: -3
   _prefab: {fileID: 8634314507980571667, guid: a4e053fe46f03bf4e81a4c6691c51e88, type: 3}
