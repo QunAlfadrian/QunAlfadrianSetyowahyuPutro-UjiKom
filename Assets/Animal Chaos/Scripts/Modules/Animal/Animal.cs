@@ -1,6 +1,7 @@
 using UnityEngine;
 
 namespace GDPP2.UjiKom.AnimalSystem {
+    [SelectionBase]
     [RequireComponent(typeof(Rigidbody))]
     public class Animal : MonoBehaviour, IMovable {
         [SerializeField] private AnimalData _data;

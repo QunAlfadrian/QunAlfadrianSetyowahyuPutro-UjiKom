@@ -5,10 +5,12 @@ namespace GDPP2.UjiKom.AnimalSystem {
     public class AnimalData : ScriptableObject {
         [SerializeField] private int _moveSpeed;
         [SerializeField] private int _score;
+        [SerializeField] private int _scorePenalty;
         [SerializeField] private GameObject _prefab;
 
         public int MoveSpeed => _moveSpeed;
         public int Score => _score;
+        public int ScorePenalty => _scorePenalty;
         public GameObject Prefab => _prefab;
 
         public GameObject GetInstance(Transform parent) {
